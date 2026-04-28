@@ -5,6 +5,13 @@ terraform {
       version = "~> 4.0"
     }
   }
+
+  backend "azurerm" {
+    resource_group_name  = "rg-tfstate-week13"
+    storage_account_name = "tfstateweek13progress"
+    container_name       = "tfstate"
+    key                  = "epicbook.terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
